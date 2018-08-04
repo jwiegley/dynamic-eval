@@ -9,6 +9,7 @@ import Bound
 import Control.Monad (ap)
 import Data.Deriving (deriveEq1, deriveOrd1, deriveRead1, deriveShow1)
 import Data.Functor.Classes
+import Reflex
 
 data Lam a
     = Var a
