@@ -129,13 +129,3 @@ viewLamD depth showVar (LamD l) = dyn_ $ l <&> \case
           B _ -> text $ T.pack $ show depth
           F v -> viewLamD (succ depth) showVar v
     viewLamD (succ depth) f b
-
-main :: IO ()
-main = mainWidget $ do
-  el "h1" $ text "Input"
-  exp <- el "div" $ editLamD id
-  el "h1" $ text "Raw"
-  viewLamD 0 text exp
-  el "h1" $ text "Reduced"
-  viewLamD 0 text $ whnfD exp
-  pure ()
